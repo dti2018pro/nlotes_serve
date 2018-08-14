@@ -1,0 +1,7 @@
+# pipenv install django django-allauth
+
+
+
+# pipenv install
+# pipenv shell
+# (nlotes_serve-u3riQcTX) D:\dev\dti-a\nlotes_serve>manage.py runserver 80
