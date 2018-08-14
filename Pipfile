@@ -13,10 +13,9 @@ django-allauth = "*"
 docutils = "*"
 django-crispy-forms = "*"
 
+django-debug-toolbar = "*"
 
 [dev-packages]
-django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.6"
-pip
