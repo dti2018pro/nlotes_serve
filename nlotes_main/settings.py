@@ -110,10 +110,21 @@ WSGI_APPLICATION = 'nlotes_main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
+DATABASESx = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd4ejj9822e8v7e',
+        'USER': 'leazvhzuinglqr',
+        'PASSWORD': '4c95bbf3d027d650b2cc3f2c07670ad78ee42a9a15d1d1ccb080200472737fb9',
+        'HOST': 'ec2-54-225-76-201.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 

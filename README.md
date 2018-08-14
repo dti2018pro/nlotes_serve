@@ -17,3 +17,14 @@ Install dependencies with pipenv::
 Runing::
 
     $ (nlotes_serve-u3riQcTX) D:\dev\dti-a\nlotes_serve>manage.py runserver 80
+
+## Demo : https://nlotesserve.herokuapp.com/accounts/login/
+
+	user: admin
+	pass: 123
+
+## NOTA
+	
+	Debe de entrar como administrador para cambiar el accesp del nuevo usuario a is_staff para True
+	
+
