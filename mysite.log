@@ -37427,3 +37427,1403 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'Tru
 [16/Aug/2018 09:44:33] INFO [django.server:124] "GET /static/js/base.js HTTP/1.1" 304 0
 [16/Aug/2018 09:44:33] INFO [django.server:124] "GET /static/debug_toolbar/img/ajax-loader.gif HTTP/1.1" 304 0
 [16/Aug/2018 09:44:33] INFO [django.server:124] "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:17] DEBUG [django.db.backends:111] (0.214) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+[16/Aug/2018 09:55:18] DEBUG [django.db.backends:111] (0.203) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[16/Aug/2018 09:55:25] DEBUG [django.db.backends:111] (0.111) SELECT "django_site"."id", "django_site"."domain", "django_site"."name" FROM "django_site" WHERE "django_site"."id" = 1; args=(1,)
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'scope' in template 'account/login.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'scope'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'scope'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'scope'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [scope] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'BjZLLdWcb6Xit7hWMjoZ7CarOZ7OBNFbWI03ri6uVMCHaFuGrcMlLQboJKJRnepU'>, 'debug': True, 'sql_queries': <function debug.<locals>.<lambda> at 0x000001BB88BA3488>, 'request': <WSGIRequest: GET '/accounts/login/'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x000001BB88A0B400>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000001BB88BA18D0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000001BB889E6978>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'view': <allauth.account.views.LoginView object at 0x000001BB889E6E80>, 'signup_url': '/accounts/signup/', 'site': <Site: nlotesserve.herokuapp.com>, 'redirect_field_name': 'next', 'redirect_field_value': None}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n<h1>'>, <django.templatetags.i18n.TranslateNode object at 0x000001BB88B8FDD8>, <TextNode: '</h1>\n\n'>, <django.template.library.SimpleNode object at 0x000001BB88B8FE48>, <TextNode: '\n\n'>, <IfNode>, <TextNode: '\n\n<form class="login" met'>, <django.template.defaulttags.URLNode object at 0x000001BB88B8F048>, <TextNode: '">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x000001BB88B8F2B0>, <TextNode: '\n  '>, <Variable Node: form|crispy>, <TextNode: '\n  '>, <IfNode>, <TextNode: '\n  <a class="button secon'>, <django.template.defaulttags.URLNode object at 0x000001BB88B96AC8>, <TextNode: '">'>, <django.templatetags.i18n.TranslateNode object at 0x000001BB88B96B70>, <TextNode: '</a>\n  <button class="btn'>, <django.templatetags.i18n.TranslateNode object at 0x000001BB88B96C88>, <TextNode: '</button>\n</form>\n\n'>]>, 'socialaccount_providers': [<allauth.socialaccount.providers.google.provider.GoogleProvider object at 0x000001BB88BBF198>]}, {'process': 'login', 'socialaccount_providers': [<allauth.socialaccount.providers.google.provider.GoogleProvider object at 0x000001BB88BBF048>]}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'provider': <allauth.socialaccount.providers.google.provider.GoogleProvider object at 0x000001BB88BBF048>}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'auth_params' in template 'account/login.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'auth_params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'auth_params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'auth_params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [auth_params] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'BjZLLdWcb6Xit7hWMjoZ7CarOZ7OBNFbWI03ri6uVMCHaFuGrcMlLQboJKJRnepU'>, 'debug': True, 'sql_queries': <function debug.<locals>.<lambda> at 0x000001BB88BA3488>, 'request': <WSGIRequest: GET '/accounts/login/'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x000001BB88A0B400>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000001BB88BA18D0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000001BB889E6978>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'view': <allauth.account.views.LoginView object at 0x000001BB889E6E80>, 'signup_url': '/accounts/signup/', 'site': <Site: nlotesserve.herokuapp.com>, 'redirect_field_name': 'next', 'redirect_field_value': None}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n<h1>'>, <django.templatetags.i18n.TranslateNode object at 0x000001BB88B8FDD8>, <TextNode: '</h1>\n\n'>, <django.template.library.SimpleNode object at 0x000001BB88B8FE48>, <TextNode: '\n\n'>, <IfNode>, <TextNode: '\n\n<form class="login" met'>, <django.template.defaulttags.URLNode object at 0x000001BB88B8F048>, <TextNode: '">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x000001BB88B8F2B0>, <TextNode: '\n  '>, <Variable Node: form|crispy>, <TextNode: '\n  '>, <IfNode>, <TextNode: '\n  <a class="button secon'>, <django.template.defaulttags.URLNode object at 0x000001BB88B96AC8>, <TextNode: '">'>, <django.templatetags.i18n.TranslateNode object at 0x000001BB88B96B70>, <TextNode: '</a>\n  <button class="btn'>, <django.templatetags.i18n.TranslateNode object at 0x000001BB88B96C88>, <TextNode: '</button>\n</form>\n\n'>]>, 'socialaccount_providers': [<allauth.socialaccount.providers.google.provider.GoogleProvider object at 0x000001BB88BBF198>]}, {'process': 'login', 'socialaccount_providers': [<allauth.socialaccount.providers.google.provider.GoogleProvider object at 0x000001BB88BBF048>]}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'provider': <allauth.socialaccount.providers.google.provider.GoogleProvider object at 0x000001BB88BBF048>}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'include_media' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [include_media] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1978>}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1978>}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'wrapper_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1978>}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'html5_required' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [html5_required] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1978>}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1978>}, {}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'error_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1978>}, {}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1978>}, {}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1978>}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1A90>}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1A90>}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'wrapper_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1A90>}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'html5_required' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [html5_required] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1A90>}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1A90>}, {}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'error_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1A90>}, {}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1A90>}, {}, {}]
+[16/Aug/2018 09:55:25] DEBUG [django.template:872] Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <LoginForm bound=False, valid=False, fields=(login;password)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB88BA1A90>}, {}]
+[16/Aug/2018 09:55:25] INFO [django.server:124] "GET /accounts/login/ HTTP/1.1" 200 13508
+[16/Aug/2018 09:55:25] INFO [django.server:124] "GET /static/css/base.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:25] INFO [django.server:124] "GET /static/js/base.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:26] INFO [django.server:124] "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:26] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_pre.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:26] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_post.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:26] INFO [django.server:124] "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:26] INFO [django.server:124] "GET /static/debug_toolbar/img/ajax-loader.gif HTTP/1.1" 304 0
+[16/Aug/2018 09:55:26] INFO [django.server:124] "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:30] DEBUG [django.db.backends:111] (0.112) SELECT "socialaccount_socialapp"."id", "socialaccount_socialapp"."provider", "socialaccount_socialapp"."name", "socialaccount_socialapp"."client_id", "socialaccount_socialapp"."secret", "socialaccount_socialapp"."key" FROM "socialaccount_socialapp" INNER JOIN "socialaccount_socialapp_sites" ON ("socialaccount_socialapp"."id" = "socialaccount_socialapp_sites"."socialapp_id") WHERE ("socialaccount_socialapp"."provider" = 'google' AND "socialaccount_socialapp_sites"."site_id" = 1); args=('google', 1)
+[16/Aug/2018 09:55:30] DEBUG [django.db.backends:111] (0.140) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = '0f0qbmnmnaavbebm58td325wz2hf8gf9'  LIMIT 1; args=('0f0qbmnmnaavbebm58td325wz2hf8gf9',)
+[16/Aug/2018 09:55:31] DEBUG [django.db.backends:111] (0.220) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('0f0qbmnmnaavbebm58td325wz2hf8gf9', 'MWUyMGQ4Zjk5MTgxODdmMjE4NDI3MTE0YjkwNzY4MTExMjQ0OTdiODp7InNvY2lhbGFjY291bnRfc3RhdGUiOlt7InByb2Nlc3MiOiJsb2dpbiIsInNjb3BlIjoiIiwiYXV0aF9wYXJhbXMiOiIifSwiOEI1ZlJMdnRoaEpmIl19', '2018-08-30T14:55:30.801482+00:00'::timestamptz); args=('0f0qbmnmnaavbebm58td325wz2hf8gf9', 'MWUyMGQ4Zjk5MTgxODdmMjE4NDI3MTE0YjkwNzY4MTExMjQ0OTdiODp7InNvY2lhbGFjY291bnRfc3RhdGUiOlt7InByb2Nlc3MiOiJsb2dpbiIsInNjb3BlIjoiIiwiYXV0aF9wYXJhbXMiOiIifSwiOEI1ZlJMdnRoaEpmIl19', datetime.datetime(2018, 8, 30, 14, 55, 30, 801482, tzinfo=<UTC>))
+[16/Aug/2018 09:55:31] INFO [django.server:124] "GET /accounts/google/login/?process=login HTTP/1.1" 302 0
+[16/Aug/2018 09:55:39] DEBUG [django.db.backends:111] (0.112) SELECT "socialaccount_socialapp"."id", "socialaccount_socialapp"."provider", "socialaccount_socialapp"."name", "socialaccount_socialapp"."client_id", "socialaccount_socialapp"."secret", "socialaccount_socialapp"."key" FROM "socialaccount_socialapp" INNER JOIN "socialaccount_socialapp_sites" ON ("socialaccount_socialapp"."id" = "socialaccount_socialapp_sites"."socialapp_id") WHERE ("socialaccount_socialapp"."provider" = 'google' AND "socialaccount_socialapp_sites"."site_id" = 1); args=('google', 1)
+[16/Aug/2018 09:55:42] DEBUG [django.db.backends:111] (0.109) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2018-08-16T14:55:42.856388+00:00'::timestamptz AND "django_session"."session_key" = '0f0qbmnmnaavbebm58td325wz2hf8gf9'); args=(datetime.datetime(2018, 8, 16, 14, 55, 42, 856388, tzinfo=<UTC>), '0f0qbmnmnaavbebm58td325wz2hf8gf9')
+[16/Aug/2018 09:55:43] DEBUG [django.db.backends:111] (0.112) SELECT "socialaccount_socialaccount"."id", "socialaccount_socialaccount"."user_id", "socialaccount_socialaccount"."provider", "socialaccount_socialaccount"."uid", "socialaccount_socialaccount"."last_login", "socialaccount_socialaccount"."date_joined", "socialaccount_socialaccount"."extra_data" FROM "socialaccount_socialaccount" WHERE ("socialaccount_socialaccount"."provider" = 'google' AND "socialaccount_socialaccount"."uid" = '110287267877653722659'); args=('google', '110287267877653722659')
+[16/Aug/2018 09:55:43] DEBUG [django.db.backends:111] (0.109) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 12; args=(12,)
+[16/Aug/2018 09:55:43] DEBUG [django.db.backends:111] (0.221) UPDATE "socialaccount_socialaccount" SET "user_id" = 12, "provider" = 'google', "uid" = '110287267877653722659', "last_login" = '2018-08-16T14:55:43.327962+00:00'::timestamptz, "date_joined" = '2018-08-16T14:53:14.207658+00:00'::timestamptz, "extra_data" = '{"id": "110287267877653722659", "email": "digesi.juliaca@upeu.edu.pe", "verified_email": true, "name": "Digesi Juliaca", "given_name": "Digesi", "family_name": "Juliaca", "picture": "https://lh4.googleusercontent.com/-8IZZPfY4jhg/AAAAAAAAAAI/AAAAAAAAAAA/AAnnY7pDlrof6uKH0aqIlpqs-MrGyLE7aA/mo/photo.jpg", "locale": "es", "hd": "upeu.edu.pe"}' WHERE "socialaccount_socialaccount"."id" = 9; args=(12, 'google', '110287267877653722659', datetime.datetime(2018, 8, 16, 14, 55, 43, 327962, tzinfo=<UTC>), datetime.datetime(2018, 8, 16, 14, 53, 14, 207658, tzinfo=<UTC>), '{"id": "110287267877653722659", "email": "digesi.juliaca@upeu.edu.pe", "verified_email": true, "name": "Digesi Juliaca", "given_name": "Digesi", "family_name": "Juliaca", "picture": "https://lh4.googleusercontent.com/-8IZZPfY4jhg/AAAAAAAAAAI/AAAAAAAAAAA/AAnnY7pDlrof6uKH0aqIlpqs-MrGyLE7aA/mo/photo.jpg", "locale": "es", "hd": "upeu.edu.pe"}', 9)
+[16/Aug/2018 09:55:43] DEBUG [django.db.backends:111] (0.113) SELECT "socialaccount_socialtoken"."id", "socialaccount_socialtoken"."app_id", "socialaccount_socialtoken"."account_id", "socialaccount_socialtoken"."token", "socialaccount_socialtoken"."token_secret", "socialaccount_socialtoken"."expires_at" FROM "socialaccount_socialtoken" WHERE ("socialaccount_socialtoken"."account_id" = 9 AND "socialaccount_socialtoken"."app_id" = 1); args=(9, 1)
+[16/Aug/2018 09:55:44] DEBUG [django.db.backends:111] (0.219) UPDATE "socialaccount_socialtoken" SET "app_id" = 1, "account_id" = 9, "token" = 'ya29.Glv6Bb1SKPPpkvfkgc0ii4g4cyHIGqgQ0JKuV0IQY--29TPJ_wz5UIM1senEYv4Vz4GtJMiH1wyYFjujvSAikvO9iuD3IFqTNjGnND3PMGiL0eQm_EnS6G9DD88p', "token_secret" = '', "expires_at" = '2018-08-16T15:55:41.545472+00:00'::timestamptz WHERE "socialaccount_socialtoken"."id" = 9; args=(1, 9, 'ya29.Glv6Bb1SKPPpkvfkgc0ii4g4cyHIGqgQ0JKuV0IQY--29TPJ_wz5UIM1senEYv4Vz4GtJMiH1wyYFjujvSAikvO9iuD3IFqTNjGnND3PMGiL0eQm_EnS6G9DD88p', '', datetime.datetime(2018, 8, 16, 15, 55, 41, 545472, tzinfo=<UTC>), 9)
+[16/Aug/2018 09:55:44] DEBUG [django.db.backends:111] (0.112) SELECT (1) AS "a" FROM "account_emailaddress" WHERE ("account_emailaddress"."user_id" = 12 AND "account_emailaddress"."verified" = true)  LIMIT 1; args=(12, True)
+[16/Aug/2018 09:55:44] DEBUG [django.db.backends:111] (0.137) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'  LIMIT 1; args=('gdbtcn67nzyrk4000dh4ldrgslq9tm0t',)
+[16/Aug/2018 09:55:44] DEBUG [django.db.backends:111] (0.218) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('gdbtcn67nzyrk4000dh4ldrgslq9tm0t', 'NDI5NDRlMzdhMmU5ODU2OTkzMGIwNmNkYjdjZDFjMjQ2NTlkZWNmODp7fQ==', '2018-08-30T14:55:44.570436+00:00'::timestamptz); args=('gdbtcn67nzyrk4000dh4ldrgslq9tm0t', 'NDI5NDRlMzdhMmU5ODU2OTkzMGIwNmNkYjdjZDFjMjQ2NTlkZWNmODp7fQ==', datetime.datetime(2018, 8, 30, 14, 55, 44, 570436, tzinfo=<UTC>))
+[16/Aug/2018 09:55:45] DEBUG [django.db.backends:111] (0.109) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = '0f0qbmnmnaavbebm58td325wz2hf8gf9'; args=('0f0qbmnmnaavbebm58td325wz2hf8gf9',)
+[16/Aug/2018 09:55:45] DEBUG [django.db.backends:111] (0.217) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('0f0qbmnmnaavbebm58td325wz2hf8gf9'); args=('0f0qbmnmnaavbebm58td325wz2hf8gf9',)
+[16/Aug/2018 09:55:45] DEBUG [django.db.backends:111] (0.233) UPDATE "auth_user" SET "last_login" = '2018-08-16T14:55:45.408852+00:00'::timestamptz WHERE "auth_user"."id" = 12; args=(datetime.datetime(2018, 8, 16, 14, 55, 45, 408852, tzinfo=<UTC>), 12)
+[16/Aug/2018 09:55:46] DEBUG [django.db.backends:111] (0.217) UPDATE "django_session" SET "session_data" = 'NTVkMDQ2NWIxYmM1MDNhYzJhY2Q1NjM1ZGI3MDU3NDljNDE5ZjI4ZDp7Il9hdXRoX3VzZXJfaWQiOiIxMiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImFsbGF1dGguYWNjb3VudC5hdXRoX2JhY2tlbmRzLkF1dGhlbnRpY2F0aW9uQmFja2VuZCIsIl9hdXRoX3VzZXJfaGFzaCI6IjA4MTcyZjg0NGYyY2E3N2U1YTE4M2E1YTI2ZWY4MDExMTliM2E1OWUifQ==', "expire_date" = '2018-08-30T14:55:45.829690+00:00'::timestamptz WHERE "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'; args=('NTVkMDQ2NWIxYmM1MDNhYzJhY2Q1NjM1ZGI3MDU3NDljNDE5ZjI4ZDp7Il9hdXRoX3VzZXJfaWQiOiIxMiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImFsbGF1dGguYWNjb3VudC5hdXRoX2JhY2tlbmRzLkF1dGhlbnRpY2F0aW9uQmFja2VuZCIsIl9hdXRoX3VzZXJfaGFzaCI6IjA4MTcyZjg0NGYyY2E3N2U1YTE4M2E1YTI2ZWY4MDExMTliM2E1OWUifQ==', datetime.datetime(2018, 8, 30, 14, 55, 45, 829690, tzinfo=<UTC>), 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t')
+[16/Aug/2018 09:55:46] INFO [django.server:124] "GET /accounts/google/login/callback/?state=8B5fRLvthhJf&code=4/PADluE6vHarcPgA91bG00xOwUMingzFNviN707onC6gf0iFlj9rlsIB_mKa1k55TnhOinMA7bq5TRc0bWM6oEqY HTTP/1.1" 302 0
+[16/Aug/2018 09:55:47] DEBUG [django.db.backends:111] (0.112) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2018-08-16T14:55:46.466977+00:00'::timestamptz AND "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'); args=(datetime.datetime(2018, 8, 16, 14, 55, 46, 466977, tzinfo=<UTC>), 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t')
+[16/Aug/2018 09:55:47] DEBUG [django.db.backends:111] (0.116) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 12; args=(12,)
+[16/Aug/2018 09:55:47] DEBUG [django.template:872] Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'dBOhqYUjgqLqlmIdPD5K0PtmwQkrmm2iG2Km1u3OjZf8yI6MG7h8ULKx4z1WXKJC'>, 'debug': True, 'sql_queries': <function debug.<locals>.<lambda> at 0x000001BB88D7A488>, 'request': <WSGIRequest: GET '/admin/'>, 'user': <SimpleLazyObject: <User: digesi>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000001BB88DD2B38>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000001BB88C0ACC0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Sitio de administración de Django', 'site_header': 'Administración de Django', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Autenticación y autorización', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Grupos', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': 'Usuarios', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}, {'name': 'Cuentas', 'app_label': 'account', 'app_url': '/admin/account/', 'has_module_perms': True, 'models': [{'name': 'Correos electrónicos', 'object_name': 'EmailAddress', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/account/emailaddress/', 'add_url': '/admin/account/emailaddress/add/'}]}, {'name': 'Cuentas Sociales', 'app_label': 'socialaccount', 'app_url': '/admin/socialaccount/', 'has_module_perms': True, 'models': [{'name': 'Social accounts', 'object_name': 'SocialAccount', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialaccount/', 'add_url': '/admin/socialaccount/socialaccount/add/'}, {'name': 'Social application tokens', 'object_name': 'SocialToken', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialtoken/', 'add_url': '/admin/socialaccount/socialtoken/add/'}, {'name': 'Social applications', 'object_name': 'SocialApp', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialapp/', 'add_url': '/admin/socialaccount/socialapp/add/'}]}, {'name': 'Sitios', 'app_label': 'sites', 'app_url': '/admin/sites/', 'has_module_perms': True, 'models': [{'name': 'Sitios', 'object_name': 'Site', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/sites/site/', 'add_url': '/admin/sites/site/add/'}]}], 'title': 'Sitio administrativo', 'app_list': [{'name': 'Autenticación y autorización', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Grupos', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': 'Usuarios', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}, {'name': 'Cuentas', 'app_label': 'account', 'app_url': '/admin/account/', 'has_module_perms': True, 'models': [{'name': 'Correos electrónicos', 'object_name': 'EmailAddress', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/account/emailaddress/', 'add_url': '/admin/account/emailaddress/add/'}]}, {'name': 'Cuentas Sociales', 'app_label': 'socialaccount', 'app_url': '/admin/socialaccount/', 'has_module_perms': True, 'models': [{'name': 'Social accounts', 'object_name': 'SocialAccount', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialaccount/', 'add_url': '/admin/socialaccount/socialaccount/add/'}, {'name': 'Social application tokens', 'object_name': 'SocialToken', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialtoken/', 'add_url': '/admin/socialaccount/socialtoken/add/'}, {'name': 'Social applications', 'object_name': 'SocialApp', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialapp/', 'add_url': '/admin/socialaccount/socialapp/add/'}]}, {'name': 'Sitios', 'app_label': 'sites', 'app_url': '/admin/sites/', 'has_module_perms': True, 'models': [{'name': 'Sitios', 'object_name': 'Site', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/sites/site/', 'add_url': '/admin/sites/site/add/'}]}], 'LANGUAGE_CODE': 'es', 'LANGUAGE_BIDI': False}]
+[16/Aug/2018 09:55:47] DEBUG [django.template:872] Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'dBOhqYUjgqLqlmIdPD5K0PtmwQkrmm2iG2Km1u3OjZf8yI6MG7h8ULKx4z1WXKJC'>, 'debug': True, 'sql_queries': <function debug.<locals>.<lambda> at 0x000001BB88D7A488>, 'request': <WSGIRequest: GET '/admin/'>, 'user': <SimpleLazyObject: <User: digesi>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000001BB88DD2B38>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000001BB88C0ACC0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Sitio de administración de Django', 'site_header': 'Administración de Django', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Autenticación y autorización', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Grupos', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': 'Usuarios', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}, {'name': 'Cuentas', 'app_label': 'account', 'app_url': '/admin/account/', 'has_module_perms': True, 'models': [{'name': 'Correos electrónicos', 'object_name': 'EmailAddress', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/account/emailaddress/', 'add_url': '/admin/account/emailaddress/add/'}]}, {'name': 'Cuentas Sociales', 'app_label': 'socialaccount', 'app_url': '/admin/socialaccount/', 'has_module_perms': True, 'models': [{'name': 'Social accounts', 'object_name': 'SocialAccount', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialaccount/', 'add_url': '/admin/socialaccount/socialaccount/add/'}, {'name': 'Social application tokens', 'object_name': 'SocialToken', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialtoken/', 'add_url': '/admin/socialaccount/socialtoken/add/'}, {'name': 'Social applications', 'object_name': 'SocialApp', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialapp/', 'add_url': '/admin/socialaccount/socialapp/add/'}]}, {'name': 'Sitios', 'app_label': 'sites', 'app_url': '/admin/sites/', 'has_module_perms': True, 'models': [{'name': 'Sitios', 'object_name': 'Site', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/sites/site/', 'add_url': '/admin/sites/site/add/'}]}], 'title': 'Sitio administrativo', 'app_list': [{'name': 'Autenticación y autorización', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Grupos', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': 'Usuarios', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}, {'name': 'Cuentas', 'app_label': 'account', 'app_url': '/admin/account/', 'has_module_perms': True, 'models': [{'name': 'Correos electrónicos', 'object_name': 'EmailAddress', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/account/emailaddress/', 'add_url': '/admin/account/emailaddress/add/'}]}, {'name': 'Cuentas Sociales', 'app_label': 'socialaccount', 'app_url': '/admin/socialaccount/', 'has_module_perms': True, 'models': [{'name': 'Social accounts', 'object_name': 'SocialAccount', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialaccount/', 'add_url': '/admin/socialaccount/socialaccount/add/'}, {'name': 'Social application tokens', 'object_name': 'SocialToken', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialtoken/', 'add_url': '/admin/socialaccount/socialtoken/add/'}, {'name': 'Social applications', 'object_name': 'SocialApp', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialapp/', 'add_url': '/admin/socialaccount/socialapp/add/'}]}, {'name': 'Sitios', 'app_label': 'sites', 'app_url': '/admin/sites/', 'has_module_perms': True, 'models': [{'name': 'Sitios', 'object_name': 'Site', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/sites/site/', 'add_url': '/admin/sites/site/add/'}]}], 'LANGUAGE_CODE': 'es', 'LANGUAGE_BIDI': False}]
+[16/Aug/2018 09:55:47] DEBUG [django.db.backends:111] (0.110) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 12 ORDER BY "django_admin_log"."action_time" DESC  LIMIT 10; args=(12,)
+[16/Aug/2018 09:55:47] INFO [django.server:124] "GET /admin/ HTTP/1.1" 200 15911
+[16/Aug/2018 09:55:47] INFO [django.server:124] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_pre.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_post.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/debug_toolbar/img/ajax-loader.gif HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[16/Aug/2018 09:55:48] INFO [django.server:124] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[16/Aug/2018 09:55:53] DEBUG [django.db.backends:111] (0.110) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2018-08-16T14:55:52.896752+00:00'::timestamptz AND "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'); args=(datetime.datetime(2018, 8, 16, 14, 55, 52, 896752, tzinfo=<UTC>), 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t')
+[16/Aug/2018 09:55:53] DEBUG [django.db.backends:111] (0.119) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 12; args=(12,)
+[16/Aug/2018 09:55:53] INFO [django.server:124] "GET / HTTP/1.1" 200 12427
+[16/Aug/2018 09:55:53] INFO [django.server:124] "GET /static/css/base.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:53] INFO [django.server:124] "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:54] INFO [django.server:124] "GET /static/js/base.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:54] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_pre.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:54] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_post.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:54] INFO [django.server:124] "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[16/Aug/2018 09:55:54] INFO [django.server:124] "GET /static/debug_toolbar/img/ajax-loader.gif HTTP/1.1" 304 0
+[16/Aug/2018 09:55:54] INFO [django.server:124] "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[16/Aug/2018 09:55:56] DEBUG [django.db.backends:111] (0.111) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2018-08-16T14:55:55.376016+00:00'::timestamptz AND "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'); args=(datetime.datetime(2018, 8, 16, 14, 55, 55, 376016, tzinfo=<UTC>), 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t')
+[16/Aug/2018 09:55:56] DEBUG [django.db.backends:111] (0.127) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 12; args=(12,)
+[16/Aug/2018 09:55:56] DEBUG [django.template:872] Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Oz3aBADlDJTUKJ3NQ4bOt6nEmTtqLRUlh0Zfc6MQGinCX5rmHyncn2EPUCaVmfBF'>, 'debug': True, 'sql_queries': <function debug.<locals>.<lambda> at 0x000001BB88EB2D90>, 'request': <WSGIRequest: GET '/admin/'>, 'user': <SimpleLazyObject: <User: digesi>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000001BB88EA62B0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000001BB88EA36D8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Sitio de administración de Django', 'site_header': 'Administración de Django', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Autenticación y autorización', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Grupos', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': 'Usuarios', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}, {'name': 'Cuentas', 'app_label': 'account', 'app_url': '/admin/account/', 'has_module_perms': True, 'models': [{'name': 'Correos electrónicos', 'object_name': 'EmailAddress', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/account/emailaddress/', 'add_url': '/admin/account/emailaddress/add/'}]}, {'name': 'Cuentas Sociales', 'app_label': 'socialaccount', 'app_url': '/admin/socialaccount/', 'has_module_perms': True, 'models': [{'name': 'Social accounts', 'object_name': 'SocialAccount', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialaccount/', 'add_url': '/admin/socialaccount/socialaccount/add/'}, {'name': 'Social application tokens', 'object_name': 'SocialToken', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialtoken/', 'add_url': '/admin/socialaccount/socialtoken/add/'}, {'name': 'Social applications', 'object_name': 'SocialApp', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialapp/', 'add_url': '/admin/socialaccount/socialapp/add/'}]}, {'name': 'Sitios', 'app_label': 'sites', 'app_url': '/admin/sites/', 'has_module_perms': True, 'models': [{'name': 'Sitios', 'object_name': 'Site', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/sites/site/', 'add_url': '/admin/sites/site/add/'}]}], 'title': 'Sitio administrativo', 'app_list': [{'name': 'Autenticación y autorización', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Grupos', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': 'Usuarios', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}, {'name': 'Cuentas', 'app_label': 'account', 'app_url': '/admin/account/', 'has_module_perms': True, 'models': [{'name': 'Correos electrónicos', 'object_name': 'EmailAddress', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/account/emailaddress/', 'add_url': '/admin/account/emailaddress/add/'}]}, {'name': 'Cuentas Sociales', 'app_label': 'socialaccount', 'app_url': '/admin/socialaccount/', 'has_module_perms': True, 'models': [{'name': 'Social accounts', 'object_name': 'SocialAccount', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialaccount/', 'add_url': '/admin/socialaccount/socialaccount/add/'}, {'name': 'Social application tokens', 'object_name': 'SocialToken', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialtoken/', 'add_url': '/admin/socialaccount/socialtoken/add/'}, {'name': 'Social applications', 'object_name': 'SocialApp', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialapp/', 'add_url': '/admin/socialaccount/socialapp/add/'}]}, {'name': 'Sitios', 'app_label': 'sites', 'app_url': '/admin/sites/', 'has_module_perms': True, 'models': [{'name': 'Sitios', 'object_name': 'Site', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/sites/site/', 'add_url': '/admin/sites/site/add/'}]}], 'LANGUAGE_CODE': 'es', 'LANGUAGE_BIDI': False}]
+[16/Aug/2018 09:55:56] DEBUG [django.template:872] Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Oz3aBADlDJTUKJ3NQ4bOt6nEmTtqLRUlh0Zfc6MQGinCX5rmHyncn2EPUCaVmfBF'>, 'debug': True, 'sql_queries': <function debug.<locals>.<lambda> at 0x000001BB88EB2D90>, 'request': <WSGIRequest: GET '/admin/'>, 'user': <SimpleLazyObject: <User: digesi>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000001BB88EA62B0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000001BB88EA36D8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Sitio de administración de Django', 'site_header': 'Administración de Django', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Autenticación y autorización', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Grupos', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': 'Usuarios', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}, {'name': 'Cuentas', 'app_label': 'account', 'app_url': '/admin/account/', 'has_module_perms': True, 'models': [{'name': 'Correos electrónicos', 'object_name': 'EmailAddress', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/account/emailaddress/', 'add_url': '/admin/account/emailaddress/add/'}]}, {'name': 'Cuentas Sociales', 'app_label': 'socialaccount', 'app_url': '/admin/socialaccount/', 'has_module_perms': True, 'models': [{'name': 'Social accounts', 'object_name': 'SocialAccount', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialaccount/', 'add_url': '/admin/socialaccount/socialaccount/add/'}, {'name': 'Social application tokens', 'object_name': 'SocialToken', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialtoken/', 'add_url': '/admin/socialaccount/socialtoken/add/'}, {'name': 'Social applications', 'object_name': 'SocialApp', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialapp/', 'add_url': '/admin/socialaccount/socialapp/add/'}]}, {'name': 'Sitios', 'app_label': 'sites', 'app_url': '/admin/sites/', 'has_module_perms': True, 'models': [{'name': 'Sitios', 'object_name': 'Site', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/sites/site/', 'add_url': '/admin/sites/site/add/'}]}], 'title': 'Sitio administrativo', 'app_list': [{'name': 'Autenticación y autorización', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Grupos', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': 'Usuarios', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}, {'name': 'Cuentas', 'app_label': 'account', 'app_url': '/admin/account/', 'has_module_perms': True, 'models': [{'name': 'Correos electrónicos', 'object_name': 'EmailAddress', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/account/emailaddress/', 'add_url': '/admin/account/emailaddress/add/'}]}, {'name': 'Cuentas Sociales', 'app_label': 'socialaccount', 'app_url': '/admin/socialaccount/', 'has_module_perms': True, 'models': [{'name': 'Social accounts', 'object_name': 'SocialAccount', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialaccount/', 'add_url': '/admin/socialaccount/socialaccount/add/'}, {'name': 'Social application tokens', 'object_name': 'SocialToken', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialtoken/', 'add_url': '/admin/socialaccount/socialtoken/add/'}, {'name': 'Social applications', 'object_name': 'SocialApp', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/socialaccount/socialapp/', 'add_url': '/admin/socialaccount/socialapp/add/'}]}, {'name': 'Sitios', 'app_label': 'sites', 'app_url': '/admin/sites/', 'has_module_perms': True, 'models': [{'name': 'Sitios', 'object_name': 'Site', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/sites/site/', 'add_url': '/admin/sites/site/add/'}]}], 'LANGUAGE_CODE': 'es', 'LANGUAGE_BIDI': False}]
+[16/Aug/2018 09:55:56] DEBUG [django.db.backends:111] (0.112) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 12 ORDER BY "django_admin_log"."action_time" DESC  LIMIT 10; args=(12,)
+[16/Aug/2018 09:55:56] INFO [django.server:124] "GET /admin/ HTTP/1.1" 200 15773
+[16/Aug/2018 09:55:59] DEBUG [django.db.backends:111] (0.210) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2018-08-16T14:55:58.769871+00:00'::timestamptz AND "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'); args=(datetime.datetime(2018, 8, 16, 14, 55, 58, 769871, tzinfo=<UTC>), 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t')
+[16/Aug/2018 09:55:59] DEBUG [django.db.backends:111] (0.255) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 12; args=(12,)
+[16/Aug/2018 09:56:00] INFO [django.server:124] "GET / HTTP/1.1" 200 12427
+[16/Aug/2018 09:56:00] INFO [django.server:124] "GET /static/css/base.css HTTP/1.1" 304 0
+[16/Aug/2018 09:56:00] INFO [django.server:124] "GET /static/js/base.js HTTP/1.1" 304 0
+[16/Aug/2018 09:56:00] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_pre.js HTTP/1.1" 304 0
+[16/Aug/2018 09:56:00] INFO [django.server:124] "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[16/Aug/2018 09:56:00] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_post.js HTTP/1.1" 304 0
+[16/Aug/2018 09:56:00] INFO [django.server:124] "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[16/Aug/2018 09:56:00] INFO [django.server:124] "GET /static/debug_toolbar/img/ajax-loader.gif HTTP/1.1" 304 0
+[16/Aug/2018 09:56:00] INFO [django.server:124] "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[16/Aug/2018 09:56:03] DEBUG [django.db.backends:111] (0.135) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2018-08-16T14:56:02.804952+00:00'::timestamptz AND "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'); args=(datetime.datetime(2018, 8, 16, 14, 56, 2, 804952, tzinfo=<UTC>), 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t')
+[16/Aug/2018 09:56:03] DEBUG [django.db.backends:111] (0.119) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 12; args=(12,)
+[16/Aug/2018 09:56:03] INFO [django.server:124] "GET /accounts/password/change/ HTTP/1.1" 302 0
+[16/Aug/2018 09:56:04] DEBUG [django.db.backends:111] (0.139) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2018-08-16T14:56:03.813472+00:00'::timestamptz AND "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'); args=(datetime.datetime(2018, 8, 16, 14, 56, 3, 813472, tzinfo=<UTC>), 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t')
+[16/Aug/2018 09:56:04] DEBUG [django.db.backends:111] (0.118) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 12; args=(12,)
+[16/Aug/2018 09:56:05] ERROR [django.request:228] Internal Server Error: /accounts/password/set/
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 13: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+[16/Aug/2018 09:56:05] ERROR [django.server:124] "GET /accounts/password/set/ HTTP/1.1" 500 168214
+[16/Aug/2018 09:56:05] INFO [django.server:124] "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[16/Aug/2018 09:56:05] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_pre.js HTTP/1.1" 304 0
+[16/Aug/2018 09:56:05] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_post.js HTTP/1.1" 304 0
+[16/Aug/2018 09:56:05] INFO [django.server:124] "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[16/Aug/2018 09:56:05] INFO [django.server:124] "GET /static/debug_toolbar/img/ajax-loader.gif HTTP/1.1" 304 0
+[16/Aug/2018 09:56:05] INFO [django.server:124] "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[16/Aug/2018 09:57:20] DEBUG [django.db.backends:111] (0.111) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2018-08-16T14:57:18.981801+00:00'::timestamptz AND "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'); args=(datetime.datetime(2018, 8, 16, 14, 57, 18, 981801, tzinfo=<UTC>), 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t')
+[16/Aug/2018 09:57:20] DEBUG [django.db.backends:111] (0.110) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 12; args=(12,)
+[16/Aug/2018 09:57:20] ERROR [django.request:228] Internal Server Error: /accounts/password/set/
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'bootstrap_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 13: 'bootstrap_form', expected 'endblock'. Did you forget to register or load this tag?
+[16/Aug/2018 09:57:20] ERROR [django.server:124] "GET /accounts/password/set/ HTTP/1.1" 500 168353
+[16/Aug/2018 09:57:20] INFO [django.server:124] "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[16/Aug/2018 09:57:20] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_pre.js HTTP/1.1" 304 0
+[16/Aug/2018 09:57:20] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_post.js HTTP/1.1" 304 0
+[16/Aug/2018 09:57:20] INFO [django.server:124] "GET /static/debug_toolbar/img/ajax-loader.gif HTTP/1.1" 304 0
+[16/Aug/2018 09:57:20] INFO [django.server:124] "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[16/Aug/2018 09:57:20] INFO [django.server:124] "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[16/Aug/2018 09:57:31] DEBUG [django.db.backends:111] (0.112) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2018-08-16T14:57:30.788373+00:00'::timestamptz AND "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'); args=(datetime.datetime(2018, 8, 16, 14, 57, 30, 788373, tzinfo=<UTC>), 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t')
+[16/Aug/2018 09:57:31] DEBUG [django.db.backends:111] (0.113) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 12; args=(12,)
+[16/Aug/2018 09:57:31] ERROR [django.request:228] Internal Server Error: /accounts/password/set/
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'password_set_form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 13: 'password_set_form', expected 'endblock'. Did you forget to register or load this tag?
+[16/Aug/2018 09:57:31] ERROR [django.server:124] "GET /accounts/password/set/ HTTP/1.1" 500 168322
+[16/Aug/2018 09:57:31] INFO [django.server:124] "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[16/Aug/2018 09:57:32] INFO [django.server:124] "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[16/Aug/2018 09:57:32] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_post.js HTTP/1.1" 304 0
+[16/Aug/2018 09:57:32] INFO [django.server:124] "GET /static/debug_toolbar/img/ajax-loader.gif HTTP/1.1" 304 0
+[16/Aug/2018 09:57:32] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_pre.js HTTP/1.1" 304 0
+[16/Aug/2018 09:57:32] INFO [django.server:124] "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[16/Aug/2018 09:57:51] DEBUG [django.db.backends:111] (0.112) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2018-08-16T14:57:50.802017+00:00'::timestamptz AND "django_session"."session_key" = 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t'); args=(datetime.datetime(2018, 8, 16, 14, 57, 50, 802017, tzinfo=<UTC>), 'gdbtcn67nzyrk4000dh4ldrgslq9tm0t')
+[16/Aug/2018 09:57:51] DEBUG [django.db.backends:111] (0.109) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 12; args=(12,)
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'include_media' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [include_media] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0B59E8>}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0B59E8>}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'wrapper_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0B59E8>}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'html5_required' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [html5_required] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0B59E8>}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0B59E8>}, {}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'error_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0B59E8>}, {}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0B59E8>}, {}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 2, 'revcounter0': 1, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0B59E8>}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0907F0>}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0907F0>}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'wrapper_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0907F0>}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'html5_required' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'html5_required'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [html5_required] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0907F0>}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0907F0>}, {}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'error_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0907F0>}, {}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0907F0>}, {}, {}]
+[16/Aug/2018 09:57:51] DEBUG [django.template:872] Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\asullom\.virtualenvs\nlotes_serve-u3riQcTX\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'True': True, 'False': False, 'None': None, 'form': <SetPasswordForm bound=False, valid=False, fields=(password1;password2)>, 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'field_class': ''}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x000001BB8A0907F0>}, {}]
+[16/Aug/2018 09:57:51] INFO [django.server:124] "GET /accounts/password/set/ HTTP/1.1" 200 13446
+[16/Aug/2018 09:57:51] INFO [django.server:124] "GET /static/css/base.css HTTP/1.1" 304 0
+[16/Aug/2018 09:57:51] INFO [django.server:124] "GET /static/js/base.js HTTP/1.1" 304 0
+[16/Aug/2018 09:57:52] INFO [django.server:124] "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[16/Aug/2018 09:57:52] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_pre.js HTTP/1.1" 304 0
+[16/Aug/2018 09:57:52] INFO [django.server:124] "GET /static/debug_toolbar/js/jquery_post.js HTTP/1.1" 304 0
+[16/Aug/2018 09:57:52] INFO [django.server:124] "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[16/Aug/2018 09:57:52] INFO [django.server:124] "GET /static/debug_toolbar/img/ajax-loader.gif HTTP/1.1" 304 0
+[16/Aug/2018 09:57:52] INFO [django.server:124] "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
