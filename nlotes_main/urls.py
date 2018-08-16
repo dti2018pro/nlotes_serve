@@ -18,12 +18,18 @@ from django.urls import path, include
 from django.conf import settings
 
 urlpatterns = [
+    path('', include('home.urls')),
+
+    # Django Admin
     path('admin/', admin.site.urls),
     path('admin/doc/', include('django.contrib.admindocs.urls')),
 
-    #path('accounts/', include('accounts.urls')),
+    # User management
+    #path('users/', include('users.urls')),
+
     #path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('allauth.urls')),  # new
+    # path('accounts/', include('accounts.urls')),
 
 ]
 
