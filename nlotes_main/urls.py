@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
 
     # User management
-    #path('users/', include('users.urls')),
+    path('users/', include('users.urls')),
 
     #path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('allauth.urls')),  # new

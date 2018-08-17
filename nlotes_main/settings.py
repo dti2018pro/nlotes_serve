@@ -241,6 +241,15 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_SESSION_REMEMBER = True
 
 
+# Perosnalizando forms
+# SOCIALACCOUNT_AUTO_SIGNUP = False
+# SOCIALACCOUNT_FORMS = {
+#    'signup': 'users.forms.MyCustomSocialSignupForm',
+# }
+
+# ACCOUNT_ADAPTER="foo_app.adapters.FooAppAccountAdapter"
+SOCIALACCOUNT_ADAPTER = "users.adapters.MySocialAccountAdapter"
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
