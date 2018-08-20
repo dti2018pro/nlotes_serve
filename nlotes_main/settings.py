@@ -250,6 +250,10 @@ ACCOUNT_SESSION_REMEMBER = True
 # ACCOUNT_ADAPTER="foo_app.adapters.FooAppAccountAdapter"
 SOCIALACCOUNT_ADAPTER = "users.adapters.MySocialAccountAdapter"
 
+ACCOUNT_FORMS = {'signup': 'users.forms.MyCustomSignupForm'}
+#ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.SignupForm'
+
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

@@ -22,6 +22,8 @@ class MySocialAccountAdapter(DefaultSocialAccountAdapter):
         )
 
         # Add your own processing here.
+        print (sociallogin.user.email)
+        user.email = sociallogin.user.email
         user.is_staff = True
         user.save()
 
