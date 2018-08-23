@@ -4,16 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-
 "psycopg2-binary" = "*"
 django-heroku = "*"
 gunicorn = "*"
-
 django-allauth = "*"
 docutils = "*"
 django-crispy-forms = "*"
-
 django-debug-toolbar = "*"
+pillow = "*"
 
 [dev-packages]
 
