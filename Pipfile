@@ -12,8 +12,12 @@ docutils = "*"
 django-crispy-forms = "*"
 django-debug-toolbar = "*"
 pillow = "*"
+djangorestframework = "*"
+django-filter = "*"
+drf-extensions = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"
