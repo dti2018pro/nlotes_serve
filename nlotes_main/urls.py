@@ -33,7 +33,9 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),  # new
     # path('accounts/', include('accounts.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api-token-auth/', views.obtain_auth_token)
+    path('api-token-auth/', views.obtain_auth_token),
+    path('api-catalogo/', include('catalogo.urls')),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

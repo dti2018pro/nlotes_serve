@@ -65,6 +65,8 @@ INSTALLED_APPS = [
     'users',
     'home',
 
+    'catalogo',
+
 ]
 
 MIDDLEWARE = [
